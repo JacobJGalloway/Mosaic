@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: core-api
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: mosaic
+
+server:
+  port: 8080

@@ -1,0 +1,22 @@
+spring:
+  main:
+    web-application-type: none
+    banner-mode: off
+  application:
+    name: internal-mcp-server
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: mosaic
+  ai:
+    mcp:
+      server:
+        stdio: true
+        name: internal-mcp-server
+        version: 0.0.1
+
+logging:
+  file:
+    name: ./logs/internal-mcp-server.log
+  pattern:
+    console: ""

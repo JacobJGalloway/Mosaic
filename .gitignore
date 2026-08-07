@@ -1,6 +1,9 @@
 # Maven build output
 target/
 
+# Runtime logs
+logs/
+
 # IDE
 .idea/
 *.iml
@@ -12,3 +15,7 @@ target/
 # OS
 .DS_Store
 Thumbs.db
+
+# Secrets
+.env
+.env.*
