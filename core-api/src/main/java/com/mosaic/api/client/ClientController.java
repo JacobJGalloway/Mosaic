@@ -3,6 +3,7 @@ package com.mosaic.api.client;
 import com.mosaic.domain.client.Client;
 import com.mosaic.domain.client.ClientService;
 import com.mosaic.domain.client.completeness.ClientCompletenessResult;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class ClientController {
     }
 
     @PostMapping
-    public ResponseEntity<Client> createClient(@RequestBody Client client) {
+    public ResponseEntity<Client> createClient(@Valid @RequestBody Client client) {
         Client created = clientService.createClient(client);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }

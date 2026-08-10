@@ -1,5 +1,7 @@
 package com.mosaic.domain.client;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,7 +15,12 @@ public class Client {
     @Id
     private String id;
 
+    @NotNull
+    @Valid
     private Identity identity;
+
+    @NotNull
+    @Valid
     private ContactInfo contact;
     private List<PriorInsuranceRecord> priorInsurance = new ArrayList<>();
     private List<HouseholdMember> household = new ArrayList<>();
