@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Sprint 1 rules-based completeness check — a deliberately temporary,
- * non-AI gap check. Explicitly not extended in place; Sprint 2 replaces
+ * non-AI gap check. Explicitly not extended in place; Sprint 4 replaces
  * this with true gap analysis via the Claude MCP + LangGraph4j orchestrator.
  * See ARCHITECTURE.md's Roadmap.
  */
