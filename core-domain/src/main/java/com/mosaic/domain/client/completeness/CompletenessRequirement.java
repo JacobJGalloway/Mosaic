@@ -1,7 +1,7 @@
 package com.mosaic.domain.client.completeness;
 
 /**
- * Client-level completeness categories — see ARCHITECTURE.md's
+ * Client-level completeness categories — see docs/archive/ARCHITECTURE-sprint1.md's
  * Client Completeness Schema. Policy-specific (home/auto) requirements
  * are a Sprint 2 concern layered on top of this once a client is complete.
  */

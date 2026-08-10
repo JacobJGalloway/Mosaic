@@ -12,7 +12,7 @@ import java.util.List;
  * Sprint 1 rules-based completeness check — a deliberately temporary,
  * non-AI gap check. Explicitly not extended in place; Sprint 4 replaces
  * this with true gap analysis via the Claude MCP + LangGraph4j orchestrator.
- * See ARCHITECTURE.md's Roadmap.
+ * See OVERVIEW.md's Roadmap.
  */
 @Service
 public class ClientCompletenessService {
@@ -29,7 +29,7 @@ public class ClientCompletenessService {
         if (client.getPriorInsurance().isEmpty()) {
             missing.add(CompletenessRequirement.PRIOR_INSURANCE_HISTORY);
         }
-        // HOUSEHOLD_COMPOSITION is "as applicable" per ARCHITECTURE.md — a
+        // HOUSEHOLD_COMPOSITION is "as applicable" per docs/archive/ARCHITECTURE-sprint1.md — a
         // single-person household is legitimately empty. This rules-based
         // check can't distinguish "legitimately empty" from "not yet
         // collected," so it is never flagged missing here; true necessity

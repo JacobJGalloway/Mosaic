@@ -1,5 +1,7 @@
 # Mosaic — MVP Architecture (Sprint 1: Client Creation)
 
+> **Archived.** This is Sprint 1's architecture document, preserved as-is after Sprint 1 shipped and merged to `main`. Sprint 2's architecture lives in a new `ARCHITECTURE.md` at the repo root. See `OVERVIEW.md` → Roadmap for current cross-sprint sequencing.
+
 Scope note: this document covers Sprint 1 only — client creation, end to end, from already-digital sources exclusively. OCR/document ingestion, the Ollama MCP, Kafka, home/auto policy shapes, the Claude MCP, the orchestrator/LangGraph4j, and the UI are all later sprints and are intentionally not designed here beyond the extension points noted. See OVERVIEW.md → Roadmap for full sequencing (OCR/Ollama/Kafka land in Sprint 2, scoped to digital-only ingestion; bulk-scan OCR itself doesn't enter scope until Sprint 3).
 
 ## Sprint 1 Goal
