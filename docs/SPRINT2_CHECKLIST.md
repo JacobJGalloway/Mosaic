@@ -52,4 +52,9 @@ Tracks progress against `ARCHITECTURE.md`'s Definition of Done. See that file fo
 
 ## 6. Initial Unit Testing (early week of 09-15)
 
-- [ ] Test setup/tooling decision — scope TBD when this section starts
+- [x] Test setup/tooling decision — backend: JUnit 5 + Mockito + AssertJ (already on the classpath via `spring-boot-starter-test`, no new dependency needed). Frontend: Vitest, added to `@mosaic/shared` (plain-Node tests, no jsdom — keeps the package platform-agnostic for a future React Native island).
+- [x] `core-domain`: `ClientCompletenessServiceTest` (9 tests — Sprint 1 logic that shipped with zero coverage until now) and `UserServiceTest` (12 tests — the auth backbone's core logic: `resolveActions`, `updateActionOverrides`' tokenVersion bump, `deactivate`'s last-active-user guard, `reactivate`)
+- [x] `core-api`: `JwtServiceTest` (3 tests — issue/parse round trip, foreign-signature rejection, expiry)
+- [x] `ollama-mcp-server`: `ClientExtractionServiceTest` (2 tests — mocks the `ChatClient` fluent chain to test field-mapping logic without a live Ollama instance, including that a bad `dateOfBirth` fails loudly rather than persisting garbage)
+- [x] `@mosaic/shared`: `authStore.test.ts` (5 tests — login/logout/refresh state transitions)
+- All 30 tests passing (25 backend + 5 frontend) as of 2026-09-08. Not yet covered: controller-level/integration tests (`AuthController`, `JwtAuthenticationFilter`, `SecurityConfig` wiring), `PolicyService`/`RoleService` (thin CRUD wrappers, lower value), and any React component tests for `@mosaic/web` — reasonable next increment, not blocking.
