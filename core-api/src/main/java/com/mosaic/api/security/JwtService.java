@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Issues and verifies the JWT described in ARCHITECTURE.md's Auth Design.
+ * Issues and verifies the JWT described in docs/archive/ARCHITECTURE-sprint2.md's Auth Design.
  * The "signature" in that design is this token's own cryptographic
  * signature (HMAC via jjwt) — it's what makes the {@code actions} claim
  * tamper-evident, not a separate secret.

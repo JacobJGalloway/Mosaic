@@ -50,7 +50,7 @@ public class UserService {
      * Resolved action-ID set for a user: their role's baseline actions,
      * plus their own additions, minus their own removals. This is computed
      * fresh at both login and refresh — never cached across a token's
-     * lifetime — per ARCHITECTURE.md's Auth Design.
+     * lifetime — per docs/archive/ARCHITECTURE-sprint2.md's Auth Design.
      */
     public Set<String> resolveActions(User user) {
         Role role = roleRepository.findById(user.getRoleId())

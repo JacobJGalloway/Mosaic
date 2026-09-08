@@ -2,7 +2,7 @@ package com.mosaic.domain.auth;
 
 /**
  * Action-ID vocabulary for the per-action-ID authorization check described
- * in ARCHITECTURE.md's Auth Design. Expected to grow as new protected
+ * in docs/archive/ARCHITECTURE-sprint2.md's Auth Design. Expected to grow as new protected
  * operations are added; not an exhaustive permission model on its own —
  * roles compose these into baseline sets, users layer overrides on top.
  */

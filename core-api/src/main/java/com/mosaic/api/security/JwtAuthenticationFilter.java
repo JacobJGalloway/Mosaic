@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Implements ARCHITECTURE.md's three-part protected-request check:
+ * Implements docs/archive/ARCHITECTURE-sprint2.md's three-part protected-request check:
  * (1) JWT signature + expiry valid, (2) the token's tokenVersion claim
  * matches the user's current stored tokenVersion (the forced-refresh
  * mechanism), (3) — left to method-level @PreAuthorize("hasAuthority(...)")

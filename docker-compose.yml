@@ -1,6 +1,6 @@
 # Sprint 2 Kafka backbone — plain Apache Kafka (no Confluent layer), single
 # KRaft broker, single-partition topics. Sized for Sprint 2's narrow
-# digital-only-ingestion scope per ARCHITECTURE.md; revisit partitioning/
+# digital-only-ingestion scope per docs/archive/ARCHITECTURE-sprint2.md; revisit partitioning/
 # consumer-group sizing once the Ollama MCP's real throughput is known.
 services:
   kafka:

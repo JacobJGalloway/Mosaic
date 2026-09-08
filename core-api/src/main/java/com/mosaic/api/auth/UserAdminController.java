@@ -13,7 +13,7 @@ import java.util.Set;
 
 /**
  * All operations here are the "destructive/security-relevant service-layer
- * action" case from ARCHITECTURE.md's Auth Design: each one bumps the
+ * action" case from docs/archive/ARCHITECTURE-sprint2.md's Auth Design: each one bumps the
  * affected user's tokenVersion, invalidating their currently-held tokens
  * immediately rather than at natural expiry — including a caller editing
  * or deactivating their own account, which falls out of UserService's

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 /**
- * Sprint 2's "real ETL workflow against digital input" (ARCHITECTURE.md
+ * Sprint 2's "real ETL workflow against digital input" (docs/archive/ARCHITECTURE-sprint2.md
  * DoD #4): already-digital, agent-entered freeform intake text goes in,
  * Ollama extracts structured identity/contact fields, and a Client record
  * comes out. Linear and deterministic — no OCR, no confidence branching,

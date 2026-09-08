@@ -11,7 +11,7 @@ import java.time.Instant;
 
 /**
  * Publishes register/heartbeat/shutdown lifecycle events to the
- * mcp-lifecycle-events topic — ARCHITECTURE.md DoD #4's self-registration
+ * mcp-lifecycle-events topic — docs/archive/ARCHITECTURE-sprint2.md DoD #4's self-registration
  * requirement.
  */
 @Component

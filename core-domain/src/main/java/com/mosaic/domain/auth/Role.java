@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Baseline action-ID permission set for a role. A {@link User}'s effective
  * permissions are this set plus per-user {@code actionOverridesAdd} minus
- * {@code actionOverridesRemove} — see ARCHITECTURE.md's Auth Design.
+ * {@code actionOverridesRemove} — see docs/archive/ARCHITECTURE-sprint2.md's Auth Design.
  */
 @Document(collection = "roles")
 public class Role {

@@ -7,7 +7,7 @@ npm workspace living outside the Maven reactor, structured as "islands" mirrorin
 - **`@mosaic/shared`** — API client, auth state, and types shared across platforms. Deliberately platform-agnostic (no `window`/DOM assumptions) so a future React Native island can reuse it.
   - `config.ts` — the API base URL is set once at app startup (`setApiBaseUrl`) rather than read directly from a bundler-specific env var here, so this package doesn't assume Vite.
   - `api/auth.ts` / `api/client.ts` — thin `fetch` wrappers. `apiFetch` attaches the current token from `authStore` as a Bearer header.
-  - `state/authStore.ts` — Zustand store, persisted to `localStorage` (web). This is a **deliberate** design choice, not an oversight of `localStorage`'s XSS-readability — see ARCHITECTURE.md's Auth Design for the actual mitigation (the per-action-ID claim + `tokenVersion` mechanism enforced server-side).
+  - `state/authStore.ts` — Zustand store, persisted to `localStorage` (web). This is a **deliberate** design choice, not an oversight of `localStorage`'s XSS-readability — see docs/archive/ARCHITECTURE-sprint2.md's Auth Design for the actual mitigation (the per-action-ID claim + `tokenVersion` mechanism enforced server-side).
 - **`@mosaic/web`** — the React/TypeScript/Vite app.
   - `shell/AppShell.tsx` — the left nav, three responsive tiers ported from the Yearly-Yields Angular app's `dashboard-shell` layout: full labeled sidenav (desktop) → icon-only 64px rail (≤768px) → hidden behind a hamburger toggle (≤480px, mobile/small tablets).
   - `pages/LoginPage.tsx` — calls `authStore.login`, redirects to `/dashboard` on success.

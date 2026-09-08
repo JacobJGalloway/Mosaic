@@ -1,6 +1,6 @@
 # ollama-mcp-server
 
-MCP server scoped narrowly to digital-only ingestion — already-digital data run through linear/deterministic workflows, no OCR-confidence branching. Self-registers on the Kafka lifecycle-events topic and runs an Ollama-backed ETL workflow. See ARCHITECTURE.md's Sprint 2 scope for the "why."
+MCP server scoped narrowly to digital-only ingestion — already-digital data run through linear/deterministic workflows, no OCR-confidence branching. Self-registers on the Kafka lifecycle-events topic and runs an Ollama-backed ETL workflow. See docs/archive/ARCHITECTURE-sprint2.md's Sprint 2 scope for the "why."
 
 ## Prerequisites
 

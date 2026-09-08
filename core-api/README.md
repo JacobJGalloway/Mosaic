@@ -28,7 +28,7 @@ On an empty `users` collection, `DevAuthSeeder` bootstraps one `ADMIN` role (eve
 
 ## Auth backbone (`com.mosaic.api.security`, `com.mosaic.api.auth`)
 
-Full design rationale lives in ARCHITECTURE.md's Auth Design section — this is the implementation summary:
+Full design rationale lives in docs/archive/ARCHITECTURE-sprint2.md's Auth Design section — this is the implementation summary:
 
 - **`JwtService`** — issues/verifies the JWT via jjwt. Claims: `sub` (userId), `actions` (the resolved action-ID list from `UserService.resolveActions`), `tokenVersion`, 30-minute `exp`.
 - **`JwtAuthenticationFilter`** — the three-part protected-request check: (1) JWT signature + expiry valid, (2) the token's `tokenVersion` claim matches the user's current stored value (the forced-refresh/immediate-invalidation mechanism), (3) turns the token's `actions` claim into Spring Security `GrantedAuthority`s so ordinary `@PreAuthorize("hasAuthority(...)")` does the per-action-ID check.

@@ -9,7 +9,7 @@ Insurance companies are often weighed down by manual document handling — claim
 
 Mosaic starts in personal lines insurance (home and auto), scoped narrowly to Illinois and neighboring states with similar requirements for its MVP. Every architectural decision is deliberately scoped to what's genuinely useful now, with intentional openings for future growth rather than speculative complexity up front.
 
-For the full problem statement, domain scope, and sprint-by-sprint roadmap, see [OVERVIEW.md](OVERVIEW.md). For the current sprint's architecture and settled design decisions, see [ARCHITECTURE.md](ARCHITECTURE.md).
+For the full problem statement, domain scope, and sprint-by-sprint roadmap, see [OVERVIEW.md](OVERVIEW.md). `ARCHITECTURE.md` is a per-sprint working document rather than a persistent one — it lives on the active development branch during a sprint, then gets archived to `docs/archive/` once that sprint merges to `main` (most recently, [docs/archive/ARCHITECTURE-sprint2.md](docs/archive/ARCHITECTURE-sprint2.md)).
 
 ## Tech Stack
 

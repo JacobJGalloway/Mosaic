@@ -1,6 +1,6 @@
 # Sprint 2 Checklist
 
-Tracks progress against `ARCHITECTURE.md`'s Definition of Done. See that file for full scope/rationale.
+Tracks progress against `docs/archive/ARCHITECTURE-sprint2.md`'s Definition of Done. See that file for full scope/rationale.
 
 ## Planned Schedule (week of 2026-09-01)
 
@@ -22,7 +22,7 @@ Tracks progress against `ARCHITECTURE.md`'s Definition of Done. See that file fo
 
 ## 2. Auth Backbone (DoD #1)
 
-- [x] Design pass: per-action-ID + signature mechanism (issuance, storage, verification) — see ARCHITECTURE.md's resolved Open Question (2026-09-08)
+- [x] Design pass: per-action-ID + signature mechanism (issuance, storage, verification) — see docs/archive/ARCHITECTURE-sprint2.md's resolved Open Question (2026-09-08)
 - [x] Spring Security filter chain + jjwt signing/parsing
 - [x] BCrypt + Mongo-backed user store
 - [x] Register/login endpoints (+ `/refresh`, + admin deactivate/reactivate/override-edit endpoints)
@@ -40,7 +40,7 @@ Tracks progress against `ARCHITECTURE.md`'s Definition of Done. See that file fo
 
 - [x] Module scaffold (mirrors `internal-mcp-server`) — installed Ollama runtime via winget + pulled `llama3.2` (2026-09-08, not present before this session)
 - [x] Lifecycle self-registration (start/heartbeat/shutdown → Kafka) — verified live: register + heartbeat events observed on `mcp-lifecycle-events`
-- [x] One real ETL workflow against digital input — verified live: freeform intake text → Ollama structured extraction → real `Client` persisted via `ClientService`, all fields correct (name/DOB/phone/email). Known limitation, not fixed (belongs to Sprint 4's confidence-validation work per ARCHITECTURE.md): a garbage/off-topic input message caused Ollama to hallucinate a plausible-looking fake client rather than fail cleanly — Sprint 2's workflow assumes clean, already-digital, linear input, not adversarial-input handling.
+- [x] One real ETL workflow against digital input — verified live: freeform intake text → Ollama structured extraction → real `Client` persisted via `ClientService`, all fields correct (name/DOB/phone/email). Known limitation, not fixed (belongs to Sprint 4's confidence-validation work per docs/archive/ARCHITECTURE-sprint2.md): a garbage/off-topic input message caused Ollama to hallucinate a plausible-looking fake client rather than fail cleanly — Sprint 2's workflow assumes clean, already-digital, linear input, not adversarial-input handling.
 - Note: dropped an initially-added MCP-tool exposure of the same extraction workflow (`ClientExtractionToolset`) — it created a real circular dependency (Spring AI's `ChatClient.Builder` auto-config enumerates every `ToolCallbackProvider` bean as a callable tool for the model itself, including the tool wrapping the service that needs the same `ChatClient.Builder`). Kafka-triggered path only for now; on-demand MCP exposure is a later-sprint revisit.
 
 ## 5. Frontend Shell (DoD #5–6)
