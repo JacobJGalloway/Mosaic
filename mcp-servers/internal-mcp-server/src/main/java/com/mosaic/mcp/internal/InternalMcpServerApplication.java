@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication(scanBasePackages = "com.mosaic")
-@EnableMongoRepositories(basePackages = "com.mosaic.domain.client")
+@EnableMongoRepositories(basePackages = "com.mosaic.domain")
 public class InternalMcpServerApplication {
 
     public static void main(String[] args) {
@@ -16,9 +16,9 @@ public class InternalMcpServerApplication {
     }
 
     @Bean
-    public ToolCallbackProvider clientTools(ClientToolset clientToolset) {
+    public ToolCallbackProvider mosaicTools(ClientToolset clientToolset, PolicyToolset policyToolset) {
         return MethodToolCallbackProvider.builder()
-                .toolObjects(clientToolset)
+                .toolObjects(clientToolset, policyToolset)
                 .build();
     }
 }

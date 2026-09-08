@@ -24,6 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>3.3.4</spring-boot.version>
         <spring-ai.version>1.1.8</spring-ai.version>
+        <jjwt.version>0.12.6</jjwt.version>
     </properties>
 
     <dependencyManagement>
