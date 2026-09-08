@@ -16,6 +16,7 @@
         <module>core-domain</module>
         <module>core-api</module>
         <module>mcp-servers/internal-mcp-server</module>
+        <module>mcp-servers/ollama-mcp-server</module>
     </modules>
 
     <properties>

@@ -1,0 +1,36 @@
+spring:
+  main:
+    web-application-type: none
+    banner-mode: off
+  application:
+    name: ollama-mcp-server
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: mosaic
+  ai:
+    mcp:
+      server:
+        stdio: true
+        name: ollama-mcp-server
+        version: 0.0.1
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      chat:
+        model: ${OLLAMA_MODEL:llama3.2}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: ollama-mcp-server
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+logging:
+  file:
+    name: ./logs/ollama-mcp-server.log
+  pattern:
+    console: ""

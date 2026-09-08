@@ -38,9 +38,10 @@ Tracks progress against `ARCHITECTURE.md`'s Definition of Done. See that file fo
 
 ## 4. `ollama-mcp-server` (DoD #4)
 
-- [ ] Module scaffold (mirrors `internal-mcp-server`)
-- [ ] Lifecycle self-registration (start/heartbeat/shutdown → Kafka)
-- [ ] One real ETL workflow against digital input
+- [x] Module scaffold (mirrors `internal-mcp-server`) — installed Ollama runtime via winget + pulled `llama3.2` (2026-09-08, not present before this session)
+- [x] Lifecycle self-registration (start/heartbeat/shutdown → Kafka) — verified live: register + heartbeat events observed on `mcp-lifecycle-events`
+- [x] One real ETL workflow against digital input — verified live: freeform intake text → Ollama structured extraction → real `Client` persisted via `ClientService`, all fields correct (name/DOB/phone/email). Known limitation, not fixed (belongs to Sprint 4's confidence-validation work per ARCHITECTURE.md): a garbage/off-topic input message caused Ollama to hallucinate a plausible-looking fake client rather than fail cleanly — Sprint 2's workflow assumes clean, already-digital, linear input, not adversarial-input handling.
+- Note: dropped an initially-added MCP-tool exposure of the same extraction workflow (`ClientExtractionToolset`) — it created a real circular dependency (Spring AI's `ChatClient.Builder` auto-config enumerates every `ToolCallbackProvider` bean as a callable tool for the model itself, including the tool wrapping the service that needs the same `ChatClient.Builder`). Kafka-triggered path only for now; on-demand MCP exposure is a later-sprint revisit.
 
 ## 5. Frontend Shell (DoD #5–6)
 
