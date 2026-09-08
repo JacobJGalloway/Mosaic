@@ -1,0 +1,12 @@
+{
+  "name": "mosaic-frontend",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Mosaic frontend workspace — islands convention mirroring the MCP-server module structure, outside the Maven reactor.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspace=@mosaic/shared"
+  }
+}

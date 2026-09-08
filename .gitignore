@@ -1,6 +1,11 @@
 # Maven build output
 target/
 
+# Frontend build output
+node_modules/
+dist/
+.vite/
+
 # Runtime logs
 logs/
 
