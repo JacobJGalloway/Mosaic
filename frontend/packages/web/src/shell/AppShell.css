@@ -1,0 +1,172 @@
+/* Three-tier responsive nav, styled after the Yearly-Yields shell layout:
+   full labeled sidenav on desktop -> icon-only rail on tablet -> hidden
+   behind a hamburger toggle on mobile/small tablets. */
+
+.shell-container {
+  display: flex;
+  height: 100vh;
+}
+
+.shell-sidenav {
+  width: 220px;
+  flex-shrink: 0;
+  background-color: var(--surface-container);
+  border-right: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.15s ease;
+}
+
+.sidenav-header {
+  height: 64px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  margin: 2px 8px;
+  border-radius: 8px;
+  color: var(--on-surface);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nav-item:hover {
+  background-color: var(--surface);
+}
+
+.nav-item.active {
+  background-color: var(--accent);
+  color: var(--accent-on);
+}
+
+.nav-item-icon {
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.shell-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.shell-toolbar {
+  height: 64px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border);
+}
+
+.hamburger-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--on-surface);
+}
+
+.logout-button {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: var(--on-surface);
+}
+
+.shell-main {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Tier 2: icon-only rail */
+@media (max-width: 768px) {
+  .shell-sidenav {
+    width: 64px;
+  }
+
+  .sidenav-header {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .sidenav-header-label {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .nav-item-label {
+    display: none;
+  }
+}
+
+/* Tier 3: hamburger fallback for mobile/small tablets */
+@media (max-width: 480px) {
+  .hamburger-toggle {
+    display: block;
+  }
+
+  .shell-sidenav {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 20;
+    width: 220px;
+    transform: translateX(-100%);
+  }
+
+  .shell-sidenav.open {
+    transform: translateX(0);
+  }
+
+  .shell-sidenav .sidenav-header {
+    padding: 0 16px;
+    justify-content: flex-start;
+  }
+
+  .shell-sidenav .sidenav-header-label,
+  .shell-sidenav .nav-item-label {
+    display: inline;
+  }
+
+  .shell-sidenav .nav-item {
+    justify-content: flex-start;
+    padding: 10px 16px;
+  }
+
+  .shell-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 15;
+  }
+}

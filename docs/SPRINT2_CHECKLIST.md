@@ -45,10 +45,10 @@ Tracks progress against `ARCHITECTURE.md`'s Definition of Done. See that file fo
 
 ## 5. Frontend Shell (DoD #5–6)
 
-- [ ] `frontend/` workspace scaffold (npm/yarn workspaces, shared lib + `web` package)
-- [ ] Left nav (Yearly-Yields-styled, hamburger fallback)
-- [ ] "Dashboard coming soon" placeholder route
-- [ ] Login flow wired to real auth (blocked on #2)
+- [x] `frontend/` workspace scaffold (npm workspaces: `@mosaic/shared` — API client, Zustand auth store, types — plus `@mosaic/web`, a Vite/React/TS app; lives outside the Maven reactor)
+- [x] Left nav (Yearly-Yields-styled, hamburger fallback) — three responsive tiers: full labeled sidenav (desktop) → icon-only 64px rail (≤768px) → hidden behind a hamburger toggle (≤480px), ported from `dashboard-shell` in the Yearly-Yields Angular app (220px width, 64px toolbar, accent border pattern)
+- [x] "Dashboard coming soon" placeholder route
+- [x] Login flow wired to real auth — added CORS config to `core-api`'s `SecurityConfig` (missing until now; needed for any browser-based frontend to call the API at all). Verified live 2026-09-08: CORS preflight + actual login POST from the Vite origin both succeed end-to-end, full module graph (including the `@mosaic/shared` workspace package) transpiles/serves with no errors. Not visually confirmed in an actual browser — no browser/screenshot tool available in this environment; verified via direct HTTP checks of every layer that could silently break instead (module resolution, CORS headers, the auth request itself).
 
 ## 6. Initial Unit Testing (early week of 09-15)
 

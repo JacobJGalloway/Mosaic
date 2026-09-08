@@ -1,0 +1,14 @@
+{
+  "name": "@mosaic/shared",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Shared API client, auth state, and types for Mosaic frontend islands (web now, React Native later).",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
