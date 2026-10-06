@@ -1,0 +1,30 @@
+<!-- @dsCard group="Colors" viewport="700x180" subtitle="Success/warning/danger/info, Light + Dark" name="Status Tokens" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:20px;background:var(--surface);font-family:var(--font-sans);display:flex;gap:20px}
+  .col{flex:1}
+  .mode{border-radius:var(--radius-md);padding:14px;display:flex;flex-direction:column;gap:8px}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;border:1px solid}
+  h4{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--label-muted);margin:0 0 4px;font-weight:600}
+</style></head>
+<body>
+  <div class="col">
+    <h4>Light</h4>
+    <div class="mode" style="background:var(--neutral-50)">
+      <span class="pill" style="color:var(--success-text);background:var(--success-bg);border-color:var(--success-border)">Active</span>
+      <span class="pill" style="color:var(--warning-text);background:var(--warning-bg);border-color:var(--warning-border)">Pending review</span>
+      <span class="pill" style="color:var(--danger-text);background:var(--danger-bg);border-color:var(--danger-border)">Denied</span>
+      <span class="pill" style="color:var(--info-text);background:var(--info-bg);border-color:var(--info-border)">Info</span>
+    </div>
+  </div>
+  <div class="col" data-theme="dark">
+    <h4>Dark</h4>
+    <div class="mode" style="background:var(--neutral-900)">
+      <span class="pill" style="color:var(--success-text);background:var(--success-bg);border-color:var(--success-border)">Active</span>
+      <span class="pill" style="color:var(--warning-text);background:var(--warning-bg);border-color:var(--warning-border)">Pending review</span>
+      <span class="pill" style="color:var(--danger-text);background:var(--danger-bg);border-color:var(--danger-border)">Denied</span>
+      <span class="pill" style="color:var(--info-text);background:var(--info-bg);border-color:var(--info-border)">Info</span>
+    </div>
+  </div>
+</body></html>

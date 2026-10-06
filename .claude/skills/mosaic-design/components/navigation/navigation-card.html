@@ -1,0 +1,20 @@
+<!-- @dsCard group="Components" viewport="700x280" subtitle="Tabs, NavSidebar" name="Navigation" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;padding:0;background:var(--bg);font-family:var(--font-sans);display:flex;height:280px}
+  nav{width:180px;background:var(--surface);border-right:1px solid var(--border);padding:16px 10px;box-sizing:border-box}
+  nav .brand{padding:4px 10px 14px;font-weight:700;font-size:16px;color:var(--label-default)}
+  nav a{display:block;padding:8px 10px;border-radius:var(--radius-sm);font-size:13px;text-decoration:none;color:var(--label-default);margin-bottom:2px}
+  nav a.active{background:var(--accent-tint);color:var(--accent-text);font-weight:500}
+  main{padding:20px;flex:1}
+  .tabs{display:flex;gap:4px;border-bottom:1px solid var(--border)}
+  .tabs span{padding:9px 14px;font-size:13px;font-weight:500;color:var(--label-muted);border-bottom:2px solid transparent}
+  .tabs span.active{color:var(--accent-text);border-color:var(--accent-graphic-strong)}
+</style></head>
+<body>
+  <nav><div class="brand">Mosaic</div>
+    <a class="active" href="#">Customers</a><a href="#">Onboarding</a><a href="#">Reports</a>
+  </nav>
+  <main><div class="tabs"><span class="active">Auto Policy</span><span>Home Policy</span><span>Documents</span></div></main>
+</body></html>

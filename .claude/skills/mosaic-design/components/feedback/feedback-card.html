@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x220" subtitle="Badge, Dialog" name="Feedback" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;padding:20px;background:var(--surface);font-family:var(--font-sans);display:flex;gap:28px}
+  .pill{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid;margin-right:8px}
+  .modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:18px;width:260px}
+  .modal h3{font-size:15px;margin:0 0 8px;color:var(--label-default)}
+  .modal p{font-size:13px;color:var(--label-muted);margin:0 0 14px}
+  .modal button{font:600 13px var(--font-sans);padding:7px 14px;border-radius:var(--radius-sm);border:none;background:var(--accent-fill);color:var(--label-on-accent-fill)}
+</style></head>
+<body>
+  <div>
+    <span class="pill" style="color:var(--success-text);background:var(--success-bg);border-color:var(--success-border)">Active</span>
+    <span class="pill" style="color:var(--warning-text);background:var(--warning-bg);border-color:var(--warning-border)">Missing Data</span>
+    <span class="pill" style="color:var(--info-text);background:var(--info-bg);border-color:var(--info-border)">From Document</span>
+  </div>
+  <div class="modal"><h3>Finalize Customer Record?</h3><p>Locks the auto and home policy data entered this session.</p><button>Finalize</button></div>
+</body></html>

@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="700x300" subtitle="Card, Table" name="Data" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);font-family:var(--font-sans);display:flex;gap:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:16px;flex:1}
+  .card h3{font-size:15px;margin:0 0 2px;color:var(--label-default)}
+  .card p{font-size:12px;color:var(--label-muted);margin:0 0 10px;font-family:var(--font-mono)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;padding:7px 8px;font-size:11px;text-transform:uppercase;color:var(--label-muted);border-bottom:1px solid var(--border-strong)}
+  td{padding:7px 8px;border-bottom:1px solid var(--border);color:var(--label-default)}
+</style></head>
+<body>
+  <div class="card">
+    <h3>Auto Policy</h3><p>POL-AUTO-4471829</p>
+    <table><tr><th>Claim</th><th>Status</th></tr>
+    <tr><td>CLM-20931</td><td style="color:var(--warning-text)">Pending</td></tr>
+    <tr><td>CLM-19844</td><td style="color:var(--success-text)">Closed</td></tr></table>
+  </div>
+  <div class="card">
+    <h3>Home Policy</h3><p>POL-HOME-2290104</p>
+    <table><tr><th>Claim</th><th>Status</th></tr>
+    <tr><td>—</td><td style="color:var(--label-muted)">No claims filed</td></tr></table>
+  </div>
+</body></html>
