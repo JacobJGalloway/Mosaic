@@ -13,9 +13,10 @@ On Windows via `winget`: `winget install Ollama.Ollama`. Ollama runs as a local 
 ## Running it
 
 ```
+. ..\..\scripts\load-env.ps1
 mvn org.springframework.boot:spring-boot-maven-plugin:3.3.4:run
 ```
-(from inside `mcp-servers/ollama-mcp-server/`). Needs `MONGODB_URI` set, a reachable Kafka broker, and Ollama running with the configured model pulled.
+(run `load-env.ps1` from the repo root path, in whichever PowerShell session you'll run `mvn` in — it's per-session, not persistent. Then `mvn ...` from inside `mcp-servers/ollama-mcp-server/`). Needs `MONGODB_URI` set, a reachable Kafka broker, and Ollama running with the configured model pulled.
 
 ## Environment variables
 

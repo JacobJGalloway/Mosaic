@@ -28,7 +28,7 @@ Set via a `.env` file in `packages/web/` (Vite convention) if you need to overri
 npm install
 npm run dev --workspace=@mosaic/web
 ```
-Needs `core-api` running and reachable — `core-api`'s `SecurityConfig` only allows CORS from `MOSAIC_WEB_ORIGIN` (defaults to `http://localhost:5173`, matching Vite's default port).
+Needs `core-api` running and reachable — `core-api`'s `SecurityConfig` only allows CORS from `MOSAIC_WEB_ORIGIN` (defaults to `http://localhost:5173`, matching Vite's default port). The UI itself needs no `MONGODB_URI`/`.env` loading, but make sure `core-api`'s own terminal has run `load-env.ps1` (see [core-api/README.md](../core-api/README.md)) before it'll come up.
 
 ## Testing
 

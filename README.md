@@ -44,13 +44,15 @@ MONGODB_URI="mongodb+srv://<user>:<password>@<cluster>.mongodb.net"
 
 Other variables have working local defaults and only need overriding for non-default setups — see each module's `README.md` for its full list (`MOSAIC_JWT_SECRET`, `MOSAIC_WEB_ORIGIN`, `KAFKA_BOOTSTRAP_SERVERS`, `OLLAMA_BASE_URL`, `OLLAMA_MODEL`, `VITE_API_BASE_URL`).
 
+`scripts/load-env.ps1` loads `.env` into the current PowerShell session (`. .\scripts\load-env.ps1` from the repo root, or `. ..\..\scripts\load-env.ps1` from a module subdirectory like `mcp-servers/*`). It's per-session, not persistent — any backend module's terminal needs it re-run after opening a fresh window, before `mvn ... run`.
+
 ### Running it
 
 1. **Kafka** (needed by `core-api`, `internal-mcp-server`, and `ollama-mcp-server`):
    ```
    docker compose up -d
    ```
-2. **Backend modules** — build once from the repo root, then run whichever module you need:
+2. **Backend modules** — build once from the repo root, then run whichever module you need (each needs `load-env.ps1` run first in that module's terminal — see its own README):
    ```
    mvn install -DskipTests
    ```

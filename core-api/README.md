@@ -5,9 +5,10 @@ Frontend-facing Spring Boot REST entry point. Owns request validation, the JWT/a
 ## Running it
 
 ```
+. .\scripts\load-env.ps1
 mvn org.springframework.boot:spring-boot-maven-plugin:3.3.4:run
 ```
-(run from inside `core-api/`, or `mvn -pl core-api -am spring-boot:run` from the repo root once `spring-boot-maven-plugin` resolves via the reactor). Needs `MONGODB_URI` set and a reachable Kafka broker (`docker compose up -d` from the repo root) — see the root [README.md](../README.md) for full prerequisites.
+(run `load-env.ps1` from the repo root in whichever PowerShell session you'll run `mvn` in — it's per-session, not persistent, so a fresh terminal needs it re-run. Then `mvn ...` from inside `core-api/`, or `mvn -pl core-api -am spring-boot:run` from the repo root once `spring-boot-maven-plugin` resolves via the reactor). Needs `MONGODB_URI` set and a reachable Kafka broker (`docker compose up -d` from the repo root) — see the root [README.md](../README.md) for full prerequisites.
 
 On an empty `users` collection, `DevAuthSeeder` bootstraps one `ADMIN` role (every known action ID) and one `admin` / `changeme123` user on startup, logged as a warning. **Dev-only** — not meant to survive as-is past Sprint 2.
 

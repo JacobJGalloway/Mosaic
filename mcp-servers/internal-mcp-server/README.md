@@ -12,9 +12,10 @@ Both are registered as `MethodToolCallbackProvider` beans in `InternalMcpServerA
 ## Running it
 
 ```
+. ..\..\scripts\load-env.ps1
 mvn org.springframework.boot:spring-boot-maven-plugin:3.3.4:run
 ```
-(from inside `mcp-servers/internal-mcp-server/`). Needs `MONGODB_URI` set. Since transport is stdio, `spring.main.banner-mode` and console logging are both suppressed in `application.yml` — anything printed to stdout would corrupt the MCP protocol stream. Logs go to `./logs/internal-mcp-server.log` instead.
+(run `load-env.ps1` from the repo root path, in whichever PowerShell session you'll run `mvn` in — it's per-session, not persistent. Then `mvn ...` from inside `mcp-servers/internal-mcp-server/`). Needs `MONGODB_URI` set. Since transport is stdio, `spring.main.banner-mode` and console logging are both suppressed in `application.yml` — anything printed to stdout would corrupt the MCP protocol stream. Logs go to `./logs/internal-mcp-server.log` instead.
 
 ## Notes
 
